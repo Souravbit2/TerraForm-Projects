@@ -3,18 +3,18 @@ variable "az_location" {
   type    = string
   default = "westus"
 }
-variable "az_resource_group_name"{
-  type=string
-  default="myownrg"
+variable "az_resource_group_name" {
+  type    = string
+  default = "myownrg"
 }
 variable "az_subscription_id" {
-  type    = string
+  type = string
 }
 
 #STORAGE Account variables
 variable "az_storage_account_type" {
   type    = string
-  default = "Standard" 
+  default = "Standard"
 }
 variable "az_storage_account_name" {
   type    = string
@@ -24,53 +24,65 @@ variable "az_storage_account_replication_type" {
   type    = string
   default = "lrs"
 }
-variable "az_container_access_type"{
-  type=string
-  default="blob"
+variable "az_container_access_type" {
+  type    = string
+  default = "blob"
 }
 
 #Network variables
-variable "az_virtualnetwork_name"{
-  type=string
-  default="vnet1"
+variable "az_virtualnetwork_name" {
+  type    = string
+  default = "vnet1"
 }
-variable "az_virtualnetwork_adress_space"{
-  type=string
-  default=["10.0.0.1/16"]
+variable "az_virtualnetwork_adress_space" {
+  type    = string
+  default = ["10.0.0.1/16"]
 }
-variable "az_vnet_subnet_name"{
-  type=string
-  default="subnet1"
+variable "az_vnet_subnet_name" {
+  type    = string
+  default = "subnet1"
 }
-variable "az_vnet_subnet_address_prefixes"{
-  type=string
-  default=["10.0.1.0/24"]
+variable "az_vnet_subnet_address_prefixes" {
+  type    = string
+  default = ["10.0.1.0/24"]
 }
-variable "az_vnet_subnet_address_prefixes"{
-  type=string
-  default=["10.0.1.0/24"]
+variable "az_vnet_subnet_address_prefixes" {
+  type    = string
+  default = ["10.0.1.0/24"]
 }
-variable "az_network_interface_name"{
-  type=string
-  default="nic1"
+variable "az_network_interface_name" {
+  type    = string
+  default = "nic1"
 }
-variable "az_public_ip"{
-  type=string
-  default="public_ip"
+variable "az_public_ip" {
+  type    = string
+  default = "public_ip"
 }
-variable "az_private_ip_allocation"{
-  type=string
-  default="Dynamic"
+variable "az_private_ip_allocation" {
+  type    = string
+  default = "Dynamic"
 }
 
 #VIRTUAL Machine VARIABLES
-variable "az_vm_name"{
-  type=string
-  default="vm1"
+variable "az_vm_name" {
+  type    = string
+  default = "vm1"
 }
-variable "az_vm_size"{
-  type=string
-  default="Standard_DS1_v2"
+variable "az_vm_size" {
+  type    = string
+  default = "Standard_DS1_v2"
+}
+variable "az_admin_username" {
+  type        = string
+  description = "The admin username for the VM."
+  default     = "adminuser"
+}
+
+variable "az_admin_password" {
+  type        = string
+  description = "The admin password for the VM. **IMPORTANT:** Store securely."
+  sensitive   = true # Mark as sensitive to prevent output in logs
+  default     = "Password1234!"
 }
 #STORAGE OS DISK VARIABLES
 variable "az_os_disk_name" {
@@ -137,19 +149,6 @@ variable "az_computer_name" {
   type        = string
   description = "The computer name for the VM."
   default     = "mycomputer"
-}
-
-variable "az_admin_username" {
-  type        = string
-  description = "The admin username for the VM."
-  default     = "adminuser"
-}
-
-variable "admin_password" {
-  type        = string
-  description = "The admin password for the VM. **IMPORTANT:** Store securely."
-  sensitive   = true # Mark as sensitive to prevent output in logs
-  default     = "Password1234!"
 }
 
 variable "disable_password_auth" {
