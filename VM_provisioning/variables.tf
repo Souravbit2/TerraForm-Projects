@@ -54,6 +54,14 @@ variable "az_network_interface_name"{
   type=string
   default="nic1"
 }
+variable "az_public_ip"{
+  type=string
+  default="public_ip"
+}
+variable "az_private_ip_allocation"{
+  type=string
+  default="Dynamic"
+}
 
 #VIRTUAL Machine VARIABLES
 variable "az_vm_name"{
