@@ -35,7 +35,7 @@ variable "az_virtualnetwork_name" {
   default = "vnet1"
 }
 variable "az_virtualnetwork_adress_space" {
-  type    = string
+  type    = list(string)
   default = ["10.0.0.1/16"]
 }
 variable "az_vnet_subnet_name" {
@@ -43,11 +43,7 @@ variable "az_vnet_subnet_name" {
   default = "subnet1"
 }
 variable "az_vnet_subnet_address_prefixes" {
-  type    = string
-  default = ["10.0.1.0/24"]
-}
-variable "az_vnet_subnet_address_prefixes" {
-  type    = string
+  type    = list(string)
   default = ["10.0.1.0/24"]
 }
 variable "az_network_interface_name" {
@@ -95,30 +91,30 @@ variable "az_os_disk_caching" {
   type        = string
   description = "The caching type for the OS disk."
   default     = "ReadWrite"
-  validation {
+  /*validation {
     condition     = contains(["None", "ReadOnly", "ReadWrite"], self)
     error_message = "Valid values for os_disk_caching are None, ReadOnly, or ReadWrite."
-  }
+  }*/
 }
 
 variable "az_os_disk_create_option" {
   type        = string
   description = "The create option for the OS disk."
   default     = "FromImage"
-  validation {
+  /*validation {
     condition     = contains(["Attach", "Copy", "Empty", "FromImage", "Import", "Restore"], self)
     error_message = "Valid values for os_disk_create_option are Attach, Copy, Empty, FromImage, Import, or Restore."
-  }
+  }*/
 }
 
 variable "az_os_disk_managed_disk_type" {
   type        = string
   description = "The managed disk type for the OS disk."
   default     = "Standard_LRS"
-  validation {
+  /*validation {
     condition     = contains(["Standard_LRS", "Premium_LRS", "StandardSSD_LRS", "UltraSSD_LRS", "PremiumV2_LRS"], self)
     error_message = "Valid values for os_disk_managed_disk_type are Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS, or PremiumV2_LRS."
-  }
+  }*/
 }
 #SYSTEM IMAGE VARIABLES
 variable "az_image_publisher" {

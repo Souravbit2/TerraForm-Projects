@@ -49,12 +49,12 @@ resource "azurerm_public_ip" "publicip" {
   resource_group_name = var.az_resource_group_name
   allocation_method   = "Dynamic"
 }
-resource "azurerm_network_interface_ip_configuration" "nic_ip_config" {
+/*resource "azurerm_network_interface_ip_configuration" "nic_ip_config" {
   name                          = "ipconfig"
   network_interface_id          = azurerm_network_interface.mynic.id
   public_ip_address_id          = azurerm_public_ip.publicip.id
   private_ip_address_allocation = var.az_private_ip_allocation
-}
+}*/
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.az_vm_name
   resource_group_name = var.az_resource_group_name
@@ -66,10 +66,11 @@ resource "azurerm_linux_virtual_machine" "vm" {
     azurerm_network_interface.mynic.id,
   ]
   os_disk {
-    name                      = var.az_os_disk_name
-    caching                   = var.az_os_disk_caching
-    create_option             = var.az_os_disk_create_option
-    os_disk_managed_disk_type = var.az_os_disk_managed_disk_type
+    storage_account_type = var.az_storage_account_type
+    name                 = var.az_os_disk_name
+    caching              = var.az_os_disk_caching
+    #create_option             = var.az_os_disk_create_option
+    #os_disk_managed_disk_type = var.az_os_disk_managed_disk_type
   }
   source_image_reference {
     publisher = var.az_image_publisher
