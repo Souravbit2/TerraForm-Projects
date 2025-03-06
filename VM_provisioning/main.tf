@@ -47,7 +47,7 @@ resource "azurerm_public_ip" "publicip" {
   name                = var.az_public_ip
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
 }
 /*resource "azurerm_network_interface_ip_configuration" "nic_ip_config" {
   name                          = "ipconfig"
@@ -56,12 +56,13 @@ resource "azurerm_public_ip" "publicip" {
   private_ip_address_allocation = var.az_private_ip_allocation
 }*/
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = var.az_vm_name
-  resource_group_name = var.az_resource_group_name
-  location            = var.az_location
-  size                = var.az_vm_size
-  admin_username      = var.az_admin_username
-  admin_password      = var.az_admin_password
+  name                            = var.az_vm_name
+  resource_group_name             = var.az_resource_group_name
+  location                        = var.az_location
+  size                            = var.az_vm_size
+  admin_username                  = var.az_admin_username
+  admin_password                  = var.az_admin_password
+  disable_password_authentication = var.az_disable_password_auth
   network_interface_ids = [
     azurerm_network_interface.mynic.id,
   ]

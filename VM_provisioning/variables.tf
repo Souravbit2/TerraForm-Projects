@@ -147,7 +147,7 @@ variable "az_computer_name" {
   default     = "mycomputer"
 }
 
-variable "disable_password_auth" {
+variable "az_disable_password_auth" {
   type        = bool
   description = "Whether to disable password authentication for Linux."
   default     = false
