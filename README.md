@@ -74,4 +74,3 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 Thank you for visiting my Terraform Azure Projects repository. I hope you find the projects and documentation helpful. Happy learning and building!
 ```
 
-Feel free to modify this draft as needed to better suit your needs.
