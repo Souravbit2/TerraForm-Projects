@@ -1,9 +1,9 @@
 # Example Root Module (using the VNet module)
 
-# environments/dev/main.tf
+# Dev Env/main.tf
 
 module "dev_vnet" {
-  source              = "../../modules/vnet"
+  source              = "/workspaces/TerraForm-Projects/TerraForm-Projects/MoDulesTesting"
   resource_group_name = "dev-rg"
   location            = "East US"
   vnet_name           = "dev-vnet"

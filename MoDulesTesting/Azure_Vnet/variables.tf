@@ -1,5 +1,5 @@
 
-# modules/vnet/variables.tf
+# /workspaces/TerraForm-Projects/TerraForm-Projects/MoDulesTesting/Azure_Vnet/variables.tf
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
