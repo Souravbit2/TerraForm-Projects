@@ -1,0 +1,11 @@
+#this command shows the subcriptions
+az account list --output table
+#this command set the actual subcription you want incase you're running into auth api related errors
+az account set --subscription "your-subscription-id"
+
+
+
+
+
+az account set --subscription f27a2135-1ae7-44b2-b514-f0b7b1dcbfba
+f27a2135-1ae7-44b2-b514-f0b7b1dcbfba
