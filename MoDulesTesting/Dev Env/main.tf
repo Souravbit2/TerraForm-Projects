@@ -26,7 +26,7 @@ output "dev_subnet_id" {
 }
 
 # environments/dev/providers.tf
-terraform {
+/*terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -37,4 +37,4 @@ terraform {
 
 provider "azurerm" {
   features {}
-}
+}*/
