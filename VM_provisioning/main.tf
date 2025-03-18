@@ -80,6 +80,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = var.az_image_version
   }
 }
+
+#Below is the code for storage account creation
 # Storage Account
 /*resource "azurerm_storage_account" "sa" {
   name                     = var.az_storage_account_name
